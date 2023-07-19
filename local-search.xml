@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2023/07/19/hello-world/"/>
+    <url>/2023/07/19/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>windows_make</title>
+    <link href="/2023/06/20/windows-make/"/>
+    <url>/2023/06/20/windows-make/</url>
+    
+    <content type="html"><![CDATA[<p>add <strong>MINGW&#x2F;bin</strong> to <strong>PATH</strong></p><p>rename mingw32_make to make</p><p>restart the computer.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>cut_video</title>
+    <link href="/2023/06/20/cut-video/"/>
+    <url>/2023/06/20/cut-video/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br>start_time, end_time = <br>cap = cv2.VideoCapture(movie_name)<br>FPS = cap.get(cv2.CAP_PROP_FPS)<br>frametoStop = end_time * <span class="hljs-built_in">int</span>(FPS)<br>frametostart = start_time * <span class="hljs-built_in">int</span>(FPS)<br><span class="hljs-built_in">print</span>(frametoStop)<br>height=cap.get(cv2.CAP_PROP_FRAME_HEIGHT)<br>width=cap.get(cv2.CAP_PROP_FRAME_WIDTH)<br><span class="hljs-built_in">print</span>(height,width)<br>siz=(<span class="hljs-built_in">int</span>(height,width))<br>fourcc = cv2.VideoWriter_fourcc(*<span class="hljs-string">&#x27;H264&#x27;</span>)<br>video_writer=cv2.VideoWriter(<span class="hljs-string">&#x27;video1.avi&#x27;</span>,fourcc, FPS, siz)<br>cap.<span class="hljs-built_in">set</span>( cv2.CAP_PROP_POS_FRAMES,frametostart)<br>pos = cap.get(cv2.CAP_PROP_POS_FRAMES)<br><span class="hljs-keyword">while</span>( pos &lt;= frametoStop):<br>    ret,frame = cap.read()<span class="hljs-comment">#捕获一帧图像</span><br>    video_writer.write(frame)<span class="hljs-comment">#保存帧</span><br>    pos = cap.get(cv2.CAP_PROP_POS_FRAMES)<br><span class="hljs-built_in">print</span>(FPS)<br></code></pre></td></tr></table></figure><p>截取视频</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pydub <span class="hljs-keyword">import</span> AudioSegment<br><br><span class="hljs-comment">#打开一个音频文件</span><br><span class="hljs-comment"># 原视频名字</span><br>movie_name = xxx<br>song = AudioSegment.from_file(movie_name, <span class="hljs-string">&quot;mp4&quot;</span>)<br>song_1=song[starttime*<span class="hljs-number">1000</span>:endtime*<span class="hljs-number">1000</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(song))<br>song_1.export(<span class="hljs-string">&#x27;4.mp3&#x27;</span>,<span class="hljs-built_in">format</span>=<span class="hljs-string">&quot;mp3&quot;</span>)<br></code></pre></td></tr></table></figure><p>截取音频</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> ffmpeg<br>audio=ffmpeg.<span class="hljs-built_in">input</span>(file_name1)<br>video=ffmpeg.<span class="hljs-built_in">input</span>(file_name2)<br>out=ffmpeg.output(audio,video,file_path)<br>out.run()<br></code></pre></td></tr></table></figure><p>解决H264 问题</p><p>在</p><p><a href="https://github.com/cisco/openh264/releases">Releases · cisco&#x2F;openh264 (github.com)</a></p><p>下载 1.8.0 版本的</p><p>放在同一目录里</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>cv2, pydub</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>contactimformation</title>
+    <link href="/2023/05/30/contactimformation/"/>
+    <url>/2023/05/30/contactimformation/</url>
+    
+    <content type="html"><![CDATA[<p><strong>GP office:</strong></p><p>tel:416-624-3683</p><p>location: HL104</p><p><strong>Academic:</strong></p><p><a href="mailto:&#101;&#108;&#112;&#x40;&#117;&#116;&#x6f;&#x72;&#111;&#x6e;&#x74;&#x6f;&#x2e;&#99;&#x61;">&#101;&#108;&#112;&#x40;&#117;&#116;&#x6f;&#x72;&#111;&#x6e;&#x74;&#x6f;&#x2e;&#99;&#x61;</a></p><p><strong>University Health Insurance Plan:</strong></p><p><a href="mailto:&#117;&#104;&#x69;&#112;&#x2e;&#x75;&#x74;&#115;&#x63;&#x40;&#x75;&#x74;&#111;&#x72;&#x6f;&#x6e;&#116;&#x6f;&#46;&#99;&#x61;">&#117;&#104;&#x69;&#112;&#x2e;&#x75;&#x74;&#115;&#x63;&#x40;&#x75;&#x74;&#111;&#x72;&#x6f;&#x6e;&#116;&#x6f;&#46;&#99;&#x61;</a></p><p><strong>study abroad Question:</strong></p><p><a href="mailto:&#115;&#x74;&#117;&#100;&#121;&#x61;&#x62;&#x72;&#x6f;&#97;&#100;&#46;&#x75;&#x74;&#115;&#99;&#x40;&#117;&#116;&#x6f;&#x72;&#111;&#110;&#116;&#x6f;&#46;&#x63;&#97;">&#115;&#x74;&#117;&#100;&#121;&#x61;&#x62;&#x72;&#x6f;&#97;&#100;&#46;&#x75;&#x74;&#115;&#99;&#x40;&#117;&#116;&#x6f;&#x72;&#111;&#110;&#116;&#x6f;&#46;&#x63;&#97;</a></p><p><strong>General questions and appointment booking</strong></p><p><a href="mailto:&#x69;&#x73;&#99;&#x2e;&#117;&#116;&#115;&#99;&#64;&#x75;&#116;&#111;&#114;&#x6f;&#110;&#x74;&#x6f;&#46;&#99;&#97;">&#x69;&#x73;&#99;&#x2e;&#117;&#116;&#115;&#99;&#64;&#x75;&#116;&#111;&#114;&#x6f;&#110;&#x74;&#x6f;&#46;&#99;&#97;</a></p><p><strong>Ontario government :</strong></p><p><a href="http://www.services.gov.on.ca/">www.services.gov.on.ca</a></p><p>address: Cedarbae Mall  3945 Laurence Avenue East </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>utoronto</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Trigonometric-integral</title>
+    <link href="/2023/05/22/Trigonometric-integral/"/>
+    <url>/2023/05/22/Trigonometric-integral/</url>
+    
+    <content type="html"><![CDATA[<p>$$<br>(arcsin x)’&#x3D;\frac{1}{(siny)’} \ \ \ \ \ \ \ (y&#x3D;arcsin(x))<br>$$</p><p>$$<br>&#x3D;\frac{1}{cos(y)}<br>$$</p><p>$$<br>&#x3D;\frac {1}{\sqrt{1-(sin(y))^2}}&#x3D;\frac{1}{\sqrt{1-x^2}}<br>$$</p><p>$$<br>(arccosx)’&#x3D;-\frac{1}{\sqrt{1-x^2}}<br>$$</p><p>$$<br>\int tan x dx&#x3D;\int  \frac{sinx}{cosx}dx<br>$$</p><p>$$<br>u&#x3D;cosx \ \ \ \ du&#x3D;-sinxdx<br>$$</p><p>$$<br>\int \frac{sinx}{cosx}dx&#x3D;\int - \frac{1}{u}du&#x3D;-ln(u)+c&#x3D;-ln(cosx)+c<br>$$</p><p>$$<br>\int secx dx &#x3D; \int secx \times \frac{secx+tanx}{secx +tanx}dx<br>$$</p><p>$$<br>(sec x+tanx)’&#x3D;\frac{sinx}{cos^2x}+\frac{1}{cos^2x}<br>$$</p><p>$\int \frac{f’(x)}{f(x)}&#x3D;ln(f(x))+c$<br>$$<br>\int secx dx &#x3D;ln(secx+tanx)+c<br>$$</p><p>$$<br>\int \frac{dx}{x^2\sqrt{1+x^2}}<br>$$</p><p>$$<br>tanu&#x3D;x<br>$$</p><p>$$<br>dx&#x3D; sec^2udu<br>$$</p><p>$$<br>\int \frac{dx}{x^2\sqrt{1+x^2}}&#x3D;\int \frac{sec^2udu}{tan^2u secu}&#x3D;\int \frac{cosu}{sin^2u}du&#x3D;\int \frac{1}{v^2}dv<br>$$</p><p>$$<br>-\frac{1}{v}+c&#x3D;-\frac{1}{sinu}+c&#x3D;- \sqrt\frac{x^2+1}{x^2}+c<br>$$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>calculus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>float</title>
+    <link href="/2023/05/06/float/"/>
+    <url>/2023/05/06/float/</url>
+    
+    <content type="html"><![CDATA[<p><strong>IEEE standard:</strong><br>$$<br>V&#x3D;(-1)^S \times M \times 2^E<br>$$<br>$E$ is an unsigned int<br>$$<br>E&#x3D;exp-bias<br> \<br> M&#x3D;m+1 (1\le M &lt;2)<br>$$<br>$$<br>(-1)^0 \times (1+2^{-2}) \times 2^{(124-127)}&#x3D;0.15625<br>$$</p><img src="/2023/05/06/float/float.jpg" class="" title="This is an example image">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>computer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>bitsandbytes</title>
+    <link href="/2023/04/29/bitsandbytes/"/>
+    <url>/2023/04/29/bitsandbytes/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>pyhtonlist</title>
+    <link href="/2023/04/23/pythonlist/"/>
+    <url>/2023/04/23/pythonlist/</url>
+    
+    <content type="html"><![CDATA[<p>There are four collection data types in the Python programming language:</p><ul><li><strong>List</strong> is a collection which is ordered and changeable. Allows duplicate members.</li><li><strong>Turple</strong> is a collection which is ordered and unchangeable. Allows duplicate members.</li><li><strong>Set</strong> is a collection which is unordered, unchangeable, and unindexed. No duplicate members.</li><li><strong>Dictionary</strong> is a collection which is ordered and changeable. No duplicate members.</li></ul><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-title">dir</span>(<span class="hljs-variable">list</span>))</span><br></code></pre></td></tr></table></figure><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-symbol">&#x27;__add__</span>&#x27;, <span class="hljs-symbol">&#x27;__class__</span>&#x27;, <span class="hljs-symbol">&#x27;__class_getitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__contains__</span>&#x27;, <span class="hljs-symbol">&#x27;__delattr__</span>&#x27;, <span class="hljs-symbol">&#x27;__delitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__dir__</span>&#x27;, <span class="hljs-symbol">&#x27;__doc__</span>&#x27;, <span class="hljs-symbol">&#x27;__eq__</span>&#x27;, <span class="hljs-symbol">&#x27;__format__</span>&#x27;, <span class="hljs-symbol">&#x27;__ge__</span>&#x27;, <span class="hljs-symbol">&#x27;__getattribute__</span>&#x27;, <span class="hljs-symbol">&#x27;__getitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__getstate__</span>&#x27;, <span class="hljs-symbol">&#x27;__gt__</span>&#x27;, <span class="hljs-symbol">&#x27;__hash__</span>&#x27;, <span class="hljs-symbol">&#x27;__iadd__</span>&#x27;, <span class="hljs-symbol">&#x27;__imul__</span>&#x27;, <span class="hljs-symbol">&#x27;__init__</span>&#x27;, <span class="hljs-symbol">&#x27;__init_subclass__</span>&#x27;, <span class="hljs-symbol">&#x27;__iter__</span>&#x27;, <span class="hljs-symbol">&#x27;__le__</span>&#x27;, <span class="hljs-symbol">&#x27;__len__</span>&#x27;, <span class="hljs-symbol">&#x27;__lt__</span>&#x27;, <span class="hljs-symbol">&#x27;__mul__</span>&#x27;, <span class="hljs-symbol">&#x27;__ne__</span>&#x27;, <span class="hljs-symbol">&#x27;__new__</span>&#x27;, <span class="hljs-symbol">&#x27;__reduce__</span>&#x27;, <span class="hljs-symbol">&#x27;__reduce_ex__</span>&#x27;, <span class="hljs-symbol">&#x27;__repr__</span>&#x27;, <span class="hljs-symbol">&#x27;__reversed__</span>&#x27;, <span class="hljs-symbol">&#x27;__rmul__</span>&#x27;, <span class="hljs-symbol">&#x27;__setattr__</span>&#x27;, <span class="hljs-symbol">&#x27;__setitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__sizeof__</span>&#x27;, <span class="hljs-symbol">&#x27;__str__</span>&#x27;, <span class="hljs-symbol">&#x27;__subclasshook__</span>&#x27;, <span class="hljs-symbol">&#x27;append</span>&#x27;, <span class="hljs-symbol">&#x27;clear</span>&#x27;, <span class="hljs-symbol">&#x27;copy</span>&#x27;, <span class="hljs-symbol">&#x27;count</span>&#x27;, <span class="hljs-symbol">&#x27;extend</span>&#x27;, <span class="hljs-symbol">&#x27;index</span>&#x27;, <span class="hljs-symbol">&#x27;insert</span>&#x27;, <span class="hljs-symbol">&#x27;pop</span>&#x27;, <span class="hljs-symbol">&#x27;remove</span>&#x27;, <span class="hljs-symbol">&#x27;reverse</span>&#x27;, <span class="hljs-symbol">&#x27;sort</span>&#x27;]<br></code></pre></td></tr></table></figure><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">lis1=<span class="hljs-selector-attr">[1,2]</span><br>lis2=<span class="hljs-selector-attr">[2,3]</span><br>lis1<span class="hljs-selector-class">.extend</span>(lis2)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1)</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1[<span class="hljs-number">1</span>:])</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1[:-<span class="hljs-number">1</span>])</span></span><br></code></pre></td></tr></table></figure><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-string">[1, 2, 2, 3]</span><br><span class="hljs-string">[2, 2, 3]</span><br><span class="hljs-string">[1, 2, 2]</span><br></code></pre></td></tr></table></figure><p>$[i:]$ form the $(i+1)-th$ element to the end.</p><p>$[: -i]$ a list without the last $i$ elements</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>pyhton</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>INTERMEDIATE-VALUE-THEOREM</title>
+    <link href="/2023/04/22/INTERMEDIATE-VALUE-THEOREM/"/>
+    <url>/2023/04/22/INTERMEDIATE-VALUE-THEOREM/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Rolle theorem:</strong></p><p>If a function $f$ is continuous and differentiable on $[a,b]$ , $f(a)&#x3D;f(b)$ ,</p><p>there exists a point $c \in[a,b]$ where $f’(c)&#x3D;0$.</p><p><strong>Example:</strong></p><p>If $a&gt;0$, $f(x)$ is continuous and differentiable on $[a,b]$ and $bf(a)&#x3D;af(b)$ , prove that there exists a point $\zeta \in (a,b)$, where $\zeta f’(\zeta)&#x3D;f(\zeta)$</p><p>Solution:<br>$$<br>\frac{f(a)}{a}&#x3D;\frac{f(b)}{b}<br>$$<br>Let $g(x)&#x3D;\frac{f(x)}{x}  $<br>$$<br>g’(x)&#x3D;\frac{xf’(x)-f(x)}{x^2}<br>$$<br>$g(a)&#x3D;g(b)$</p><p>Since $f(x)$ is continuous and differentiable on $[a,b]$ and $a&gt;0$,</p><p>$g(x)$ is  continuous and differentiable on $[a,b]$</p><p>so there exists a point $\zeta$ where $g’(\zeta)&#x3D;0$<br>$$<br>\zeta f’( \zeta)-f(\zeta)&#x3D;0<br>$$<br><strong>Lagrange theorem:</strong></p><p>If $a&gt;0$, $f(x)$ is continuous and differentiable on $[a,b]$, there exists a point on $c \in[a,b]$  such that<br>$$<br>f’(c)&#x3D;\frac{f(b)-f(a)}{b-a}<br>$$<br><strong>Cauchy theorem:</strong></p><p>If a function $f$ is continuous and differentiable on $[a,b]$ and $g’(x)\ne 0$ whenever $x \in (a,b)$</p><p>then there exists a point $\zeta \in [a,b]$ where<br>$$<br>(f(b)-f(a))g’(\zeta)&#x3D;(g(b)-g(a))f’(\zeta)<br>$$<br>Proof:</p><p>if $g(a)&#x3D;g(b)$, then from Rolle theorem we can notice that</p><p>there exists a point $\zeta \in[a,b]$ where $g’(\zeta)&#x3D;0$.</p><p>So $g(a) \ne g(b)$ </p><p>Let $h(x)&#x3D;f(x)-\frac{f(b)-f(a)}{g(b)-g(a)}g(x)$</p><p>$h(a)&#x3D;\frac{f(a)g(b)-f(b)g(a)}{g(b)-g(a)}$</p><p>$h(b)&#x3D;\frac{f(a)g(b)-f(b)g(a)}{g(b)-g(a)}$</p><p>$h(a)&#x3D;h(b)$</p><p>so there exists a point $\zeta$ where $h’(\zeta)&#x3D;0$</p><p>$h’(\zeta)&#x3D;f’(\zeta)-\frac{f(b)-f(a)}{g(b)-g(a)}g’(\zeta)&#x3D;0$</p><p>so there exists a point $\zeta \in [a,b]$ where<br>$$<br>(f(b)-f(a))g’(\zeta)&#x3D;(g(b)-g(a))f’(\zeta)<br>$$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>calculus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>limits</title>
+    <link href="/2023/04/22/limits/"/>
+    <url>/2023/04/22/limits/</url>
+    
+    <content type="html"><![CDATA[<p><strong>The precise definition of limits:</strong></p><p>Let $f$ be a function defined on some open interval that contains the number $a$, except possibly at $a$ itself. Then we say that the limits of $f(x)$ as $x$ approaches $a$ is $L$ ,and we write<br>$$<br>lim_{x \rightarrow a}f(x)&#x3D;L<br>$$<br>if for every number $\epsilon &gt;0$ there is a number $\delta&gt;0$ such that<br>$$<br>if \ \ \ \ 0&lt;|x-a|&lt;\delta \ \ \ \ \ then \ \ \ \ \ |f(x)-L|&lt;\epsilon<br>$$<br>**Definition of left-hand limit:**<br>$$<br>lim_{x \rightarrow a^{-}}f(x)&#x3D;L<br>$$<br>if for every number $\epsilon&gt;0$ there is a number $\delta&gt;0$ such that<br>$$<br>if  \ \ \ \ \ a-\delta&lt;x&lt;a \ \ \ \ then \ \ \ |f(x)-L|&lt;\epsilon<br>$$<br>**Definition of right-hand limit:**<br>$$<br>lim_{x \rightarrow a^{+}}f(x)&#x3D;L<br>$$<br>if for every number $\epsilon&gt;0$ there is a number $\delta&gt;0$ such that<br>$$<br>if  \ \ \ \ \ a&lt;x&lt;a+\delta \ \ \ \ then \ \ \ |f(x)-L|&lt;\epsilon<br>$$<br><strong>Proof of the sum law</strong></p><p>If $lim_{x \rightarrow a}f(x)&#x3D;L$ and $lim_{x \rightarrow a}g(x)&#x3D;M$ both exists, then<br>$$<br>lim_{x \rightarrow a}[f(x)+g(x)]&#x3D;L+M<br>$$<br>We should prove that for every number $\epsilon &gt; 0$ there is a number $\delta&gt;0$ such that<br>$$<br>if \ \ \ \ 0&lt;|x-a|&lt;\delta \  \ \ then \ \ \ |f(x)+g(x)-L-M|&lt;\epsilon<br>$$<br>Notice that<br>$$<br>|f(x)+g(x)-L-M| \le |f(x)-L|+|g(x)-M|<br>$$<br>Since $lim_{x \rightarrow a}f(x)&#x3D;L$ and $lim_{x \rightarrow a}g(x)&#x3D;M$ both exists, there exists a number $\delta_{1}&gt;0$ such that<br>$$<br>if \ \ \ \ 0&lt;|x-a|&lt;\delta_{1} \ \ \ then\ \ \ |f(x)-L|&lt;\frac{\epsilon}{2}<br>$$<br>and  there exists a number $\delta_{2}&gt;0$ such that<br>$$<br>if \ \ \ \ 0&lt;|x-a|&lt;\delta_{2} \ \ \ then\ \ \ |g(x)-L|&lt;\frac{\epsilon}{2}<br>$$<br>Let $\delta&#x3D;min(\delta_{1},\delta_{2})$. Notice that<br>$$<br>if \ \ \ 0&lt;|x-a|&lt;\delta \ \ \ then \ \ \ 0&lt;|x-a|&lt;\delta_{1} \ \ \ and \ \ \ 0&lt;|x-a|&lt;\delta_{2}<br>$$<br>so<br>$$<br>|f(x)-L|&lt;\frac{\epsilon}{2} \ \ \ \ and \ \ \ |g(x)-L|&lt;\frac{\epsilon}{2}<br>$$<br>Therefore<br>$$<br>|f(x)+g(x)-L-M| \le |f(x)-L|+|g(x)-M|&lt;\epsilon<br>$$</p><p><strong>Definition of infinite limits</strong></p><p>Let $f$ be a function defined on some open interval that contains the number $a$, except possibly at $a$ it self. Then<br>$$<br>lim_{x \rightarrow a}f(x)&#x3D;\infty<br>$$<br>means that for every positive number $M$ there is a positive number $\delta$ such that<br>$$<br>if \ \ \ 0&lt;|x-a|&lt; \delta  \ \  \ then  \ \ f(x)&gt;M<br>$$<br>Let $f$ be a function defined on some open interval that contains the number $a$, except possibly at $a$ it self. Then<br>$$<br>lim_{x \rightarrow a}f(x)&#x3D;\infty<br>$$<br>means that for every positive number $M$ there is a positive number $\delta$ such that<br>$$<br>if \ \ \ 0&lt;|x-a|&lt; \delta  \ \  \ then  \ \ f(x)&lt;M<br>$$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>calculus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>determinants</title>
+    <link href="/2023/04/19/determinants/"/>
+    <url>/2023/04/19/determinants/</url>
+    
+    <content type="html"><![CDATA[<p>The determinants of order $n$ is a number valued function of an ordered list of $n$ vectors $V_1,V_2 ,\dots ,V_n$ each with $n$ components. We denotes it as<br>$$<br>det(V_1,V_2,\dots, V_{n})<br>$$</p><ol><li>$det(V_1,V_2,\dots,V_n)$ is a multilinear function, that is , a linear function for each $V_i$, when all other $V_j, j \ne i$ are held fixed.</li><li>If two vectors $V_i$ and $V_j$ of the ordered list are equal, the value of the dorminants is zero.</li><li>$det(E_1,E_2, \dots , E_n)&#x3D;1$, where $E_{j}$ is the vector whose $i-th$ component is 1 and all other components are zero.</li><li>If two of vectors in the ordered set are interchanged, the value of the determinant is multiplied by $-1$.</li><li>If $V_1,V_2,V_3 \dots,V_n$ are lineearly dependent, then $det(V_1,V_2,\dots V_{n})&#x3D;0$</li><li>If $V_1,V_2,V_3 \dots,V_n$ are lineearly dependent, then $det(V_1,V_2,\dots V_{n}) \ne0$</li></ol><p><strong>Proof of $4,5,6$:</strong><br>$$<br>det(U+V,U+V)&#x3D;det(U,U+V)+det(V,U+V)<br>$$</p><p>$$<br>&#x3D;det(U,U)+det(U+V)+det(V,U)+det(V,V)<br>$$</p><p>$$<br>det(U,V)+det(V,U)&#x3D;0<br>$$</p><p>If $V_1,V_2,V_3 \dots,V_n$ are linearly dependent, then<br>$$<br>V_1&#x3D;\sum_{i&#x3D;2}^{n}a_iV_i<br>$$</p><p>$$<br>det(V_1,V_2,\dots,V_n)&#x3D;\sum_{i&#x3D;3}^{n}det(a_iV_i,V_2,\dots,a_iV_i,\dots,V_n)+det(a_2V_2,a_2V_2,\dots,V_n)&#x3D;0<br>$$</p><p>If $V_1,V_2,V_3 \dots,V_n$ are linearly dependent, then the unit coordinate vector $E_i$ can be expressed:<br>$$<br>E_i&#x3D;\sum_{j&#x3D;1}^{n}b_{ji}V_{j}<br>$$</p><p>$$<br>det(E_1,E_2,\dots,E_n)&#x3D;det(\sum_{j&#x3D;1}^{n}b_{j1}V_{j},E_2,\dots,E_n)<br>$$</p><p>$$<br>&#x3D;\sum_{j&#x3D;1}^{n}b_{j1} det(V_j,E_2,\dots,E_n)<br>$$</p><p>$$<br>&#x3D;\sum_{j&#x3D;1}^{n}b_{j1}\sum_{k&#x3D;1}^{n}b_{k2} det(V_j,V_k,\dots,E_n)<br>$$</p><p>Continuing this we can get the expression<br>$$<br>det(E_1,E_2,\dots,E_n)&#x3D;\sum_{permutation jk\dots z}(b_{j1}b_{k2}\dots b_{zn})det(V_j,V_k,\dots V_z)<br>$$<br>For each permutation, either<br>$$<br>det(V_j,V_k,\dots V_z)&#x3D;-det(V_1,V_2,\dots,V_n)<br>$$<br>or<br>$$<br>det(V_j,V_k,\dots V_z)&#x3D;det(V_1,V_2,\dots,V_n)<br>$$</p><p>$$<br>det(E_1,E_2,\dots,E_n)&#x3D;1<br>$$</p><p>this prove (6)</p><p>Next we define the signature of permutation as follows. Donated by<br>$$<br>p&#x3D;p_1 p_2\dots p_n<br>$$<br><strong>Definition:</strong></p><p>We define the sinature of a permutation $p$ of $1,2,\dots,n$ to be the nnumber $s(p)&#x3D;1 $ or $-1$, such that<br>$$<br>\prod_{i&lt;j}(X_{p_{i}}-x_{p_{j}})&#x3D;s(p)\prod_{i&lt;j}(x_i-x_j)<br>$$<br>$s(p)$ has following properties:</p><ol><li>The siganture of an intechange is $-1$.</li><li>The signature of the composite of two permutation is the profuct is the product of the signatures $s(pq)&#x3D;s(p)s(q)$</li></ol><p><em>Proof:</em></p><p>The composite of $p$ and $q&#x3D;q_1q_2\dots q_n$ can be expressed as<br>$$<br>pq&#x3D;p_{q_{1}}p_{q_{2}}\dots p_{q_{n}}<br>$$</p><p>$$<br>\prod_{i&lt;j}(x_{p_{q_{i}}}-x_{p_{q_{j}}})&#x3D;\prod_{i&lt;j}{(y_{q_i}-y_{q_j})}&#x3D;s(q)\prod_{i&lt;j}{(y_{i}-y_{j})}&#x3D;s(p)s(q)\prod_{i&lt;j}{(x_{i}-x_{j})}<br>$$</p><p>if we denote $x_{p_k}&#x3D;y_k$ for every $k$ </p><p><strong>Definition:</strong></p><p>Let $V_1,\dots,V_n$ be vectors in $R^n$ written as columns,</p>{% mathjax %}V_1=\begin{bmatrix}v_{11} \\v_{21} \\ \dots \\v_{n1}\end{bmatrix}V_2=\begin{bmatrix}v_{12} \\v_{22} \\ \dots \\v_{n2}\end{bmatrix},\dots,V_n=\begin{bmatrix}v_{1n} \\v_{2n} \\ \dots \\v_{nn}\end{bmatrix}{% endmathjax %}<p>The determinants is defined as<br>$$<br>det(V_1,V_2,\dots,V_n)&#x3D;\sum_{p}s(p)v_{p1}v_{p2}\dots v_{pn}<br>$$<br><strong>Example:</strong><br>$$<br>V_1&#x3D;\begin{bmatrix}<br>v_{11} \ v_{21} \end{bmatrix}<br>V_2&#x3D;\begin{bmatrix}<br>v_{12} \ v_{22} \end{bmatrix}<br>$$<br>$s(12)&#x3D;1$</p><p>$s(21)&#x3D;-1$</p><p>$det(V_1,V_2)&#x3D;v_{11}v_{22}-v_{21}v_{12}$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>multivariable calculus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>FOO differencial-equation</title>
+    <link href="/2023/04/19/FOO%20differencial-equation/"/>
+    <url>/2023/04/19/FOO%20differencial-equation/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Seperable equation:</strong></p><p>A first order ODE has the form $F(x,y,y’)&#x3D;0$.</p><p>We can integrating both sides gives<br>$$<br>\int f(y)y’dx&#x3D;\int g(x)dx<br>$$</p><p>$$<br>\int f(y)dy&#x3D;\int f(y) \frac{dy}{dx}dx<br>$$</p><p>Example:<br>$$<br>2xy+6x+(x^2-4)y’&#x3D;0<br>$$</p><p>$$<br>\frac{y’}{y+3}&#x3D;\frac{2x}{4-x^2}<br>$$</p><p>$$<br>ln(|y+3|)&#x3D;-ln(|x^2-4|)+C<br>$$</p><p>$$<br>|y+3||x^2-4|&#x3D;A<br>$$</p><p>$$<br>y+3&#x3D;\frac{A}{x^2-4}<br>$$</p><p><strong>Exact Different Equation:</strong></p><p>Definition:</p><p>An expresssion of thw form $F(x,y)dx+G(x,y)dy$ is called a ($first order$) differential form. A differnential form $F(x,y)dx+G(y,x)dy$ is called exact if there exists a function $g(x,y) $ such that $dg&#x3D;Fdx+Gdy$. </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>differential equation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>linear-map</title>
+    <link href="/2023/04/16/linear-map/"/>
+    <url>/2023/04/16/linear-map/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Definition:</strong></p><p>Let $S$ and $T$ be two linear spaces. Let $f: S \rightarrow T$ be a transformation that associates on and only one element of $T$ to each element of $S$. The transformation $f$ is said to be a linear map if and only if<br>$$<br>f(a_1s_1+a_2s_2)&#x3D;a_1f(s_1)+a_2f(s_2)<br>$$<br>for any two scalars $a_1$ and $a_2$ and any two vectors $s_1,s_2 \in S$</p><p><strong>Proposition 1:</strong></p><p>Let $S$ be the linear space of all $L \times 1$ column vectors. Let $T$ be the linear space of all $K \times 1$ column vectors. Let A be a $K \times L$ matrix. Consider the transformation $f : s \rightarrow T$defined,for any $s \in S$,by<br>$$<br>f(s)&#x3D;As<br>$$<br>where $As$ denotes the matrix product between $A$ and $s$. Then $f$ is a linear map.</p><p><em>Proof:</em><br>$$<br>f(a_1s_1+a_2s_2)&#x3D;A(a_1s_1+a_2s_2)&#x3D;a_1As_1+a_2As_2&#x3D;a_1f(s_1)+a_2f(s_2)<br>$$<br>the same result also hold for <strong>post-multiplication</strong>.</p><p>Let $S$ be the linear space of all $1 \times L$ column vectors. Let $T$ be the linear space of all $1\times K$ column vectors. Let A be a $K \times L$ matrix. Consider the transformation $f : s \rightarrow T$defined,for any $s \in S$,by<br>$$<br>f(s)&#x3D;sA<br>$$<br>where $sA$ denotes the matrix product between $s$ and $A$.Then $f$ is a linear map.</p><p><strong>Proposition 2:</strong></p><p>Let $a_1,\dots,a_K$ be $K$ scalars and let $s_1, \dots ,s_K$ be $K$ elements of a linear space $S$. If $S \rightarrow T$ is a linear map, then<br>$$<br>f(\sum_{i&#x3D;1}^{K}a_is_i)&#x3D;\sum_{i&#x3D;1}^{K}a_{i}f(s_{i})<br>$$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linear algebra</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>triangular-matrix</title>
+    <link href="/2023/04/15/triangular-matrix/"/>
+    <url>/2023/04/15/triangular-matrix/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Definition:</strong></p><p>A $K \times K$ matrix L is a lower triangular matrix if $L_{i,j}&#x3D;0$ whenever $i&lt;j$.</p><p>A $K \times K$ matrix L is an upper triangular matrix if $L_{i,j}&#x3D;0$ whenever $i&gt;j$.</p><p><strong>Proposition 1:</strong></p><p>The transpose of a  triangular matrix is also triangular.</p><p><strong>Proposition 2:</strong></p><p>the product of two triangular matrices is triangular.</p><p><em>Proof (the product of two lower matrices is triangular):</em></p><p>Suppose $A$ and $B$ are two upper triangular matrices. </p><p>We need to prove that $(AB)_{i,j}&#x3D;0$ when $i&gt;j$.</p>{% mathjax %}(AB)_{i,j}=\sum_{k=1}^{K}(A_{i,k}B_{k,j})=\sum_{k=i}^{K}(A_{i,k}B_{k,j})=0{% endmathjax %}<p>if $A_{i,j}&#x3D;0$ and $B_{i,j}&#x3D;0$ whenever $i&gt;j$ </p><p><strong>Proposition 3:</strong></p><p>A triangular matrix is invertible if and only if its diagonal entries are non-zero.</p><p><em>Proof (part 1):</em></p><p>If the diagonal entries of a lower-triangular matrix are non-zero, then it is invertible.</p><p>We can prove this by contradiction.</p><p>Suppose this $ K \times K$matrix is singular when its diagonal entries are non-zero.</p><p>$L_{k}&#x3D; a_1L_1+ \dots a_{k-1}L_{k-1}+a_{k+1}L_{k+1} \dots a_{K}L_{K}$</p><p>$a_{K}&#x3D;0$ because $K^{th}$ row is the only row that has a non-zero entry in $K^{th}$ column. </p><p>$L_{k}&#x3D; a_1L_1+ \dots a_{k-1}L_{k-1}+a_{k+1}L_{k+1} + \dots +a_{K-1}L_{K-1} $</p><p>$a_{K-1}&#x3D;0$</p><p>Repeat this until we deduce that $a_{k+1}&#x3D;a_{k+2}&#x3D;\dots&#x3D;a_K&#x3D;0$ </p><p>the $k^{th}$ entry of the main diagonal is zero.</p><p>this’s impossible since the $k^{th}$ entry of the main diagonal is non-zero</p><p><em>Proof (part 2):</em></p><p>A lower-triangular matrix $L$ is invertible if its diagonal entries are non-zero.</p><p>Suppose the $k^{th}$ entry of the diagonal of matrix $L$ is zero.</p><p>Consider a $k \times k$  matrix that is formed by the first $k$ rows of $L$.</p><p>this matrix has at most  $k-1$ independent rows.</p><p>As a consequence, the $k$ rows of the matrix are not independent.</p><p>$L$ is not full-ranked and is not invertible.</p><p><strong>Proposition 4:</strong></p><p>If a lower (upper) triangular $K \times K$ matrix $L$ is invertible, then its inverse is lower (upper) triangular. Furthermore, each entry on the main diagonal of $L^{-1}$ satisfies</p>{% mathjax %}(L^{-1})_{kk}=\frac{1}{L_{kk}}{% endmathjax %}]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linear algebra</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>battery</title>
+    <link href="/2023/04/15/battery/"/>
+    <url>/2023/04/15/battery/</url>
+    
+    <content type="html"><![CDATA[<p>type “Powercfg &#x2F;batteryreport” in cmd</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>computer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>sum-of-subspaces</title>
+    <link href="/2023/04/14/sum-of-subspaces/"/>
+    <url>/2023/04/14/sum-of-subspaces/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Definition:</strong></p><p>Let $S$ be a linear space and $S_{1}$ and $S_{2}$ are two subspaces of $S$. The sum of  $S_{1}$ and $S_{2}$ is the set </p>{% mathjax %}S_{1}+S_{2}=  \{  s=s_{1}+s_{2}| s_{1} \in S_{1} s_{2} \in S_{2}\}{% endmathjax %}<p><strong>Proposition:</strong></p><p>Let $S$ be a linear space and $S_{1}$ and $S_{2}$ two subspaces of $S$. Then, the sum $S_{1}+S_{2}$  is a subspace of $S$<br> <em>Proof:</em></p><p>Randomly choose two vectors $s,t \in S_{1},S_{2}$. By the definition of the sum of two subspaces, there exist vectors $s_{1},t_{1} \in S_{1} $ and $s_{2},t_{2} \in S_{2}$ such that<br>$$<br>s&#x3D;s_{1}+s_{2}<br>$$</p><p>and $t&#x3D; t_{1}+t_{2}$. </p><p>Consider a linear combination of $s$ and $t$ with scalar coefficient $\sigma $ and $\gamma$<br>$$<br>\sigma s+ \gamma t&#x3D; \sigma s_{1}+ \sigma s_{2} + \gamma t_{1}+ \gamma t_{2}<br>$$</p><p>$$<br>\sigma s_{1}+ \gamma t_{1} \in S_{1}<br>$$</p><p>and<br>$$<br>\sigma s_{2}+ \gamma t_{2} \in S_{2}<br>$$<br>Therefore, the linear combination $\sigma s+ \gamma t$ can be written as a sum of a vector of $S_{1}$</p><p>and a vector of $S_{2}$. Thus ,<br>$$<br>\sigma s+ \gamma t \in S_{1}+S_{2}<br>$$</p><p>In other words, $S_{1}+S_{2}$ is a linear subspace.</p><p><strong>Definition(direct sum of subspaces):</strong></p><p>Let $S$ be a linear space. Let $S_{1},\dots,S_{n}$ be subspaces of $S$. The sum $s_{1}+ \dots + s_{n}$ is called direct sum and is donated by<br>$$<br>s_{1} \oplus s_{2} \dots s_{n}<br>$$<br>or<br>$$<br>\bigoplus_{i&#x3D;1}^{n}s_{i}<br>$$</p><p>if  and only if $s_{1}+ \dots + s_{n}$ are linearly independent whenever $s_{j} \in S_{j}$ and $s_{j} \ne 0$ for $j&#x3D;1, \dots , n$</p><p><strong>Proposition:</strong></p><p>Let $S$ be a linear space. Let $s_{1}+ \dots +s_{n}$ be a direct sum if and only if the unique way to obtain<br>$$<br>s_{1}+\dots s_{n} &#x3D;0 (s_{j} \in S{j}, j&#x3D;1,2 \dots ,n)<br>$$<br>is to set $s_{1}&#x3D;0 , \dots ,s_{n}&#x3D;0$</p><p><em>Proof:</em></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linear algebra</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Fundamental theorem of calculus</title>
+    <link href="/2023/04/13/Fundamental%20theorem%20of%20calculus/"/>
+    <url>/2023/04/13/Fundamental%20theorem%20of%20calculus/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Fundamental theorem of calculus:</strong></p><p>First:<br>$$<br>\int_{a}^{b}f(x)dx&#x3D;F(b)-F(a)<br>$$<br>when $F’(x)&#x3D;f(x)$ and $F(x)$ is continuous on $[a,b]$</p><p>Second:</p><p>when<br>$$<br>\int_{a}^{x}f(t)dt&#x3D;g(x)<br>$$<br>and f(x) is continuous  on $[a,b]$ and $x \in [a,b]$</p><p>then $g’(x)&#x3D;f(x)$</p><p>it can also be written as $\frac{\int^{x}_{a}f(t)dt}{dx}&#x3D;f(x)$</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>calculus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>reduced-echelon-form</title>
+    <link href="/2023/04/13/reduced-echelon-form/"/>
+    <url>/2023/04/13/reduced-echelon-form/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Definition (row echelon form):</strong></p><ol><li>all its non-zero rows have an entry, called the pivot, that is non-zero and has only zero entries below it and to its left.</li><li>zero-rows (if there are any) are below the non-zero rows.</li></ol><p><strong>Example:</strong></p>{% mathjax %}\begin{bmatrix}1 \ 0 \ 0\\0 \ 3 \ 0 \\0 \ 0 \ 0 \end{bmatrix}{% endmathjax %}<p>is a matrix of row echelon form.</p><p><strong>Definition(reduced row echelon form):</strong></p><p>A matrix is in reduced row echelon form if and only if it is in a row reduced echelon form, all its pivots are equal to 1 and the pivots are the only non-zero entries of the basic columns.</p><p><strong>Example:</strong></p>{% mathjax %}\begin{bmatrix} 0 \ 1 \ 3 \ 3 \\ 0 \ 0 \ 1 \ 0   \end{bmatrix}{% endmathjax %}<p>is in row echelon form because both of its rows have a pivot, however, it is hot in reduced row echelon form because there is a non-zero entry in the column of the pivots $A_{23}$</p><p><strong>How to solve a system in reduced echelon form</strong></p><p>Consider a linear form </p><p>$$<br>Ax&#x3D;b<br>$$</p><p>where $A$ is a $K \times L$ matrix of coefficients, $x$ is an $L \times 1$ vector of unknowns, and $b$ is a $K \times 1$ vector of constants.</p><p>The system is said to be in reduced row echelon form if <strong>the matrix $A$ is in reduced row echelon form.</strong></p><p>Since the reduced echelon form is a special case of the echelon form, the conditions for the existence of a solution of a system in the form apply, and we can use the back-substitution algorithm to solve the problem.  </p><p>If an unknown multiplies a basic column, it is called <strong>a basic variable</strong>. Otherwise, if it corresponds to a non-basic column, it is called a <strong>non-basic variable.</strong></p><p>Since the reduced echelon form is a special case of the echelon form, we can use the <strong>back-substitution algorithm</strong> to solve that problem.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linear algebra</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
