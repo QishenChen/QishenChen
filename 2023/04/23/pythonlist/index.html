@@ -24,7 +24,7 @@
 <meta property="og:description" content="There are four collection data types in the Python programming language:  List is a collection which is ordered and changeable. Allows duplicate members. Turple is a collection which is ordered and un">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-23T14:20:30.000Z">
-<meta property="article:modified_time" content="2023-06-21T04:01:44.000Z">
+<meta property="article:modified_time" content="2023-07-20T14:08:40.177Z">
 <meta property="article:author" content="Qishen Chen">
 <meta property="article:tag" content="pyhton">
 <meta name="twitter:card" content="summary_large_image">
@@ -82,7 +82,123 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -220,7 +336,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.1k 字
         
       </span>
     
@@ -231,7 +347,7 @@
         
         
         
-          14 分钟
+          10 分钟
         
       </span>
     
@@ -282,14 +398,14 @@
 </ul>
 <figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-title">dir</span>(<span class="hljs-variable">list</span>))</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-symbol">&#x27;__add__</span>&#x27;, <span class="hljs-symbol">&#x27;__class__</span>&#x27;, <span class="hljs-symbol">&#x27;__class_getitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__contains__</span>&#x27;, <span class="hljs-symbol">&#x27;__delattr__</span>&#x27;, <span class="hljs-symbol">&#x27;__delitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__dir__</span>&#x27;, <span class="hljs-symbol">&#x27;__doc__</span>&#x27;, <span class="hljs-symbol">&#x27;__eq__</span>&#x27;, <span class="hljs-symbol">&#x27;__format__</span>&#x27;, <span class="hljs-symbol">&#x27;__ge__</span>&#x27;, <span class="hljs-symbol">&#x27;__getattribute__</span>&#x27;, <span class="hljs-symbol">&#x27;__getitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__getstate__</span>&#x27;, <span class="hljs-symbol">&#x27;__gt__</span>&#x27;, <span class="hljs-symbol">&#x27;__hash__</span>&#x27;, <span class="hljs-symbol">&#x27;__iadd__</span>&#x27;, <span class="hljs-symbol">&#x27;__imul__</span>&#x27;, <span class="hljs-symbol">&#x27;__init__</span>&#x27;, <span class="hljs-symbol">&#x27;__init_subclass__</span>&#x27;, <span class="hljs-symbol">&#x27;__iter__</span>&#x27;, <span class="hljs-symbol">&#x27;__le__</span>&#x27;, <span class="hljs-symbol">&#x27;__len__</span>&#x27;, <span class="hljs-symbol">&#x27;__lt__</span>&#x27;, <span class="hljs-symbol">&#x27;__mul__</span>&#x27;, <span class="hljs-symbol">&#x27;__ne__</span>&#x27;, <span class="hljs-symbol">&#x27;__new__</span>&#x27;, <span class="hljs-symbol">&#x27;__reduce__</span>&#x27;, <span class="hljs-symbol">&#x27;__reduce_ex__</span>&#x27;, <span class="hljs-symbol">&#x27;__repr__</span>&#x27;, <span class="hljs-symbol">&#x27;__reversed__</span>&#x27;, <span class="hljs-symbol">&#x27;__rmul__</span>&#x27;, <span class="hljs-symbol">&#x27;__setattr__</span>&#x27;, <span class="hljs-symbol">&#x27;__setitem__</span>&#x27;, <span class="hljs-symbol">&#x27;__sizeof__</span>&#x27;, <span class="hljs-symbol">&#x27;__str__</span>&#x27;, <span class="hljs-symbol">&#x27;__subclasshook__</span>&#x27;, <span class="hljs-symbol">&#x27;append</span>&#x27;, <span class="hljs-symbol">&#x27;clear</span>&#x27;, <span class="hljs-symbol">&#x27;copy</span>&#x27;, <span class="hljs-symbol">&#x27;count</span>&#x27;, <span class="hljs-symbol">&#x27;extend</span>&#x27;, <span class="hljs-symbol">&#x27;index</span>&#x27;, <span class="hljs-symbol">&#x27;insert</span>&#x27;, <span class="hljs-symbol">&#x27;pop</span>&#x27;, <span class="hljs-symbol">&#x27;remove</span>&#x27;, <span class="hljs-symbol">&#x27;reverse</span>&#x27;, <span class="hljs-symbol">&#x27;sort</span>&#x27;]<br></code></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-symbol">'__add__</span>', <span class="hljs-symbol">'__class__</span>', <span class="hljs-symbol">'__class_getitem__</span>', <span class="hljs-symbol">'__contains__</span>', <span class="hljs-symbol">'__delattr__</span>', <span class="hljs-symbol">'__delitem__</span>', <span class="hljs-symbol">'__dir__</span>', <span class="hljs-symbol">'__doc__</span>', <span class="hljs-symbol">'__eq__</span>', <span class="hljs-symbol">'__format__</span>', <span class="hljs-symbol">'__ge__</span>', <span class="hljs-symbol">'__getattribute__</span>', <span class="hljs-symbol">'__getitem__</span>', <span class="hljs-symbol">'__getstate__</span>', <span class="hljs-symbol">'__gt__</span>', <span class="hljs-symbol">'__hash__</span>', <span class="hljs-symbol">'__iadd__</span>', <span class="hljs-symbol">'__imul__</span>', <span class="hljs-symbol">'__init__</span>', <span class="hljs-symbol">'__init_subclass__</span>', <span class="hljs-symbol">'__iter__</span>', <span class="hljs-symbol">'__le__</span>', <span class="hljs-symbol">'__len__</span>', <span class="hljs-symbol">'__lt__</span>', <span class="hljs-symbol">'__mul__</span>', <span class="hljs-symbol">'__ne__</span>', <span class="hljs-symbol">'__new__</span>', <span class="hljs-symbol">'__reduce__</span>', <span class="hljs-symbol">'__reduce_ex__</span>', <span class="hljs-symbol">'__repr__</span>', <span class="hljs-symbol">'__reversed__</span>', <span class="hljs-symbol">'__rmul__</span>', <span class="hljs-symbol">'__setattr__</span>', <span class="hljs-symbol">'__setitem__</span>', <span class="hljs-symbol">'__sizeof__</span>', <span class="hljs-symbol">'__str__</span>', <span class="hljs-symbol">'__subclasshook__</span>', <span class="hljs-symbol">'append</span>', <span class="hljs-symbol">'clear</span>', <span class="hljs-symbol">'copy</span>', <span class="hljs-symbol">'count</span>', <span class="hljs-symbol">'extend</span>', <span class="hljs-symbol">'index</span>', <span class="hljs-symbol">'insert</span>', <span class="hljs-symbol">'pop</span>', <span class="hljs-symbol">'remove</span>', <span class="hljs-symbol">'reverse</span>', <span class="hljs-symbol">'sort</span>']<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">lis1=<span class="hljs-selector-attr">[1,2]</span><br>lis2=<span class="hljs-selector-attr">[2,3]</span><br>lis1<span class="hljs-selector-class">.extend</span>(lis2)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1)</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1[<span class="hljs-number">1</span>:])</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(lis1[:-<span class="hljs-number">1</span>])</span></span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-string">[1, 2, 2, 3]</span><br><span class="hljs-string">[2, 2, 3]</span><br><span class="hljs-string">[1, 2, 2]</span><br></code></pre></td></tr></table></figure>
 
-<p>$[i:]$ form the $(i+1)-th$ element to the end.</p>
-<p>$[: -i]$ a list without the last $i$ elements</p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.296ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1456.8 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mi" transform="translate(278,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(900.8,0)"><path data-c="3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(1178.8,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container> form the <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="11.323ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5004.9 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(389,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(956.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1956.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(2456.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(3067.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(4067.9,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mi" transform="translate(4428.9,0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g></g></g></svg></mjx-container> element to the end.</p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.056ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2234.8 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mo" transform="translate(278,0)"><path data-c="3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(833.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(1611.8,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1956.8,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container> a list without the last <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> elements</p>
 
                 
               </div>
