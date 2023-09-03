@@ -16,22 +16,22 @@
   <meta name="author" content="Qishen Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1command1 | command2 ....  for example 1who | sort   Sort users name 1who | wc -l  the number of users 1cat filename | less  show file content with less command">
+    <meta name="description" content="lvalue simply means an object that has an identifiable location in memory  rvalue simply means, an object that has no identifiable location in memory  12void change(type&amp;&amp; num)&amp;#123;&amp;#125; &#x2F;&#x2F;r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux pipe">
-<meta property="og:url" content="http://example.com/2023/07/22/linux-pipe/index.html">
+<meta property="og:title" content="lvalue and rvalue">
+<meta property="og:url" content="http://example.com/2023/08/01/lvalue/index.html">
 <meta property="og:site_name" content="QishenChen">
-<meta property="og:description" content="1command1 | command2 ....  for example 1who | sort   Sort users name 1who | wc -l  the number of users 1cat filename | less  show file content with less command">
+<meta property="og:description" content="lvalue simply means an object that has an identifiable location in memory  rvalue simply means, an object that has no identifiable location in memory  12void change(type&amp;&amp; num)&amp;#123;&amp;#125; &#x2F;&#x2F;r">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-23T00:14:48.000Z">
-<meta property="article:modified_time" content="2023-07-23T00:37:32.004Z">
+<meta property="article:published_time" content="2023-08-02T03:02:06.000Z">
+<meta property="article:modified_time" content="2023-09-03T03:01:04.773Z">
 <meta property="article:author" content="Qishen Chen">
-<meta property="article:tag" content="shell">
+<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>linux pipe - QishenChen</title>
+  <title>lvalue and rvalue - QishenChen</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="linux pipe"></span>
+            <span id="subtitle" data-typed-text="lvalue and rvalue"></span>
           
         </div>
 
@@ -212,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-22 20:14" pubdate>
-          2023年7月22日 晚上
+        <time datetime="2023-08-01 23:02" pubdate>
+          2023年8月1日 晚上
         </time>
       </span>
     
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          126 字
+          413 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -272,23 +272,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">linux pipe</h1>
+            <h1 id="seo-header">lvalue and rvalue</h1>
             
             
               <div class="markdown-body">
                 
-                <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">command1 | command2 ....<br></code></pre></td></tr></table></figure>
+                <p>lvalue simply means an object that has an identifiable location in memory </p>
+<p>rvalue simply means, an object that has <strong>no identifiable location in memory</strong> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(type&amp;&amp; num)</span></span>&#123;&#125; <span class="hljs-comment">//reference to rvalue</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(type&amp; num)</span></span>&#123;&#125; <span class="hljs-comment">//reference to lvalue</span><br></code></pre></td></tr></table></figure>
 
-<p>for example</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">who | sort <br></code></pre></td></tr></table></figure>
+<p>We can assign a variable to rvalue and force it move than copy</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(T&amp; a, T&amp; b)</span></span>&#123;<br>  T temp=std::<span class="hljs-built_in">move</span>(a);<br>  a=std::<span class="hljs-built_in">move</span>(b);<br>  b=std::<span class="hljs-built_in">move</span>(temp);<br>  <br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>Sort users name</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">who | wc -l<br></code></pre></td></tr></table></figure>
-
-<p>the number of users</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat filename | less<br></code></pre></td></tr></table></figure>
-
-<p>show file content with less command</p>
 
                 
               </div>
@@ -301,7 +296,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/shell/" class="print-no-link">#shell</a>
+        <a href="/tags/c/" class="print-no-link">#c++</a>
       
     </div>
   
@@ -313,8 +308,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>linux pipe</div>
-      <div>http://example.com/2023/07/22/linux-pipe/</div>
+      <div>lvalue and rvalue</div>
+      <div>http://example.com/2023/08/01/lvalue/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +321,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月22日</div>
+          <div>2023年8月1日</div>
         </div>
       
       
@@ -358,9 +353,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/01/lvalue/" title="lvalue and rvalue">
+                      <a href="/2023/08/22/c-inheritance/" title="c++inheritance">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">lvalue and rvalue</span>
+                        <span class="hidden-mobile">c++inheritance</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -368,8 +363,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/21/matplotlib-pyplot/" title="matplotlib and season">
-                        <span class="hidden-mobile">matplotlib and season</span>
+                      <a href="/2023/07/22/linux-pipe/" title="linux pipe">
+                        <span class="hidden-mobile">linux pipe</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
