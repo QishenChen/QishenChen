@@ -4,6 +4,82 @@
   
   
   <entry>
+    <title>Trigonometric function</title>
+    <link href="/2023/09/13/trigomotric-function/"/>
+    <url>/2023/09/13/trigomotric-function/</url>
+    
+    <content type="html"><![CDATA[<h1 id="trigonometric-function"><a href="#trigonometric-function" class="headerlink" title="trigonometric function"></a>trigonometric function</h1><h2 id="The-domain-of-inverse-trigonometric-function"><a href="#The-domain-of-inverse-trigonometric-function" class="headerlink" title="The domain of inverse trigonometric function"></a>The domain of inverse trigonometric function</h2><ol><li>$sinx$ $[-\pi&#x2F;2,\pi&#x2F;2]$</li><li>$cosx$ $[0,\pi]$</li><li>$tanx$ $(-\pi&#x2F;2,\pi&#x2F;2)$</li><li>$cotx$ $(0,\pi)$</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>trigonometric function</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>python_func</title>
+    <link href="/2023/09/11/python-func/"/>
+    <url>/2023/09/11/python-func/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">list_index</span>(<span class="hljs-params">l:<span class="hljs-built_in">list</span>,i:<span class="hljs-built_in">int</span></span>)-&gt;<span class="hljs-built_in">int</span>:<br>  <span class="hljs-keyword">return</span> l[i];<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>python function</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>mathematical_symbols</title>
+    <link href="/2023/09/06/mathematical-symbols/"/>
+    <url>/2023/09/06/mathematical-symbols/</url>
+    
+    <content type="html"><![CDATA[<h2 id="symbols"><a href="#symbols" class="headerlink" title="symbols"></a>symbols</h2><ol><li>$\in \rightarrow$ in</li><li>$| \rightarrow$ such that</li><li>$\notin \rightarrow$ not in</li><li>$\bigcup$   union</li><li>$\bigcap$ intersection</li><li>$n! \rightarrow 1 \times \dots n$  </li><li>$\sum_1^{n} \rightarrow 1 + \dots n$</li></ol><h2 id="interval"><a href="#interval" class="headerlink" title="interval"></a>interval</h2><p>$(a+\delta , a-\delta)$</p><p>Punctual interval of radius $\delta$ around a</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>mathematical symbols</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>academic_writing</title>
+    <link href="/2023/09/05/academic-writing/"/>
+    <url>/2023/09/05/academic-writing/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>coherent</p></li><li><p>clear</p></li><li><p>cogent</p></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>academic writing</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>expression</title>
     <link href="/2023/09/03/expression/"/>
     <url>/2023/09/03/expression/</url>
