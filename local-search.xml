@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>infererence law</title>
+    <link href="/2023/09/27/infer-law/"/>
+    <url>/2023/09/27/infer-law/</url>
+    
+    <content type="html"><![CDATA[<img src="/2023/09/27/infer-law/1.png" class="" title="inference law">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>inference_law</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>logical_equivalence</title>
     <link href="/2023/09/14/logical-equivalence/"/>
     <url>/2023/09/14/logical-equivalence/</url>
@@ -122,7 +141,7 @@
     <link href="/2023/09/01/riscv-instruction-formats/"/>
     <url>/2023/09/01/riscv-instruction-formats/</url>
     
-    <content type="html"><![CDATA[<h1 id="Instruction-formats"><a href="#Instruction-formats" class="headerlink" title="Instruction formats"></a>Instruction formats</h1><h2 id="Five-instruction-formats"><a href="#Five-instruction-formats" class="headerlink" title="Five instruction formats"></a>Five instruction formats</h2><h3 id="R-Formats"><a href="#R-Formats" class="headerlink" title="R-Formats"></a>R-Formats</h3><p>Instruction like $add$,$mul$ </p><table><thead><tr><th>funct7</th><th>rs2</th><th>rs1</th><th>funct3</th><th>rd</th><th>opcode</th></tr></thead><tbody><tr><td>10 in total with funct3</td><td>5</td><td>5</td><td>10 in total with funct3</td><td>5</td><td>7</td></tr></tbody></table><h3 id="I-format"><a href="#I-format" class="headerlink" title="I -format"></a>I -format</h3><p>instruction like $addi$ , $muli$</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Instruction-formats"><a href="#Instruction-formats" class="headerlink" title="Instruction formats"></a>Instruction formats</h1><h2 id="Five-instruction-formats"><a href="#Five-instruction-formats" class="headerlink" title="Five instruction formats"></a>Five instruction formats</h2><h3 id="R-Formats"><a href="#R-Formats" class="headerlink" title="R-Formats"></a>R-Formats</h3><p>Instruction like $add$,$mul$ </p><table><thead><tr><th>funct7</th><th>rs2</th><th>rs1</th><th>funct3</th><th>rd</th><th>opcode</th></tr></thead><tbody><tr><td>10 in total with funct3</td><td>5</td><td>5</td><td>10 in total with funct3</td><td>5</td><td>7</td></tr></tbody></table><h3 id="I-format"><a href="#I-format" class="headerlink" title="I -format"></a>I -format</h3><p>instruction like $addi$ , $muli$</p><table><thead><tr><th>imm[11:0]</th><th>rs1</th><th>Func3</th><th>rd</th><th>opcode</th></tr></thead><tbody><tr><td>12</td><td>5</td><td>3</td><td>5</td><td>7</td></tr></tbody></table><p>or </p><table><thead><tr><th>funct7</th><th>shift amount</th><th>rs1</th><th>funct3</th><th>rd</th><th>opcode</th></tr></thead><tbody><tr><td>10 in total with funct3</td><td>5</td><td>5</td><td>10 in total with funct3</td><td>5</td><td>7</td></tr></tbody></table>]]></content>
     
     
     
